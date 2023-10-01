@@ -6,7 +6,9 @@ public class ScriptControl : MonoBehaviour
     public TextMeshProUGUI text1;
     public GameObject optionsPanel;
     public bool waitingforchoice = false;
+    
 
+    
     public string[] dialogues = {
         "Oh! no, it's already 8am",
         "I am getting late",
@@ -52,18 +54,17 @@ public class ScriptControl : MonoBehaviour
            
         }
     }
+    
 
     public void MakeChoice(int choice)
     {
         // Handle player's choice and update parameters
         gameManager.HandleChoice(choice);
 
-        // Move to the next dialogue
-        
-
-        // Hide options after choice
         optionsPanel.SetActive(false);
         waitingforchoice = false;
         DisplayNextDialogue();
+        GameManager.Instance.Displayscore();
+       
     }
 }

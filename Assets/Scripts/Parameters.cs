@@ -2,7 +2,8 @@
 [System.Serializable]
 public class Parameters
 {
-    public int wisdomIntelligence;  // W/I
+    public int wisdom;  // W/I
+    public int Intelligence;
     public int charisma;            // C
     public int strength;            // S
 }

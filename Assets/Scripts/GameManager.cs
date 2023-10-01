@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -5,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public Parameters player;
+    public TextMeshProUGUI scores;
 
     void Awake()
     {
@@ -25,7 +27,7 @@ public class GameManager : MonoBehaviour
         switch (choice)
         {
             case 1:
-                player.wisdomIntelligence += 1;
+                player.wisdom += 1;
                 player.charisma += 1;
                 break;
             case 2:
@@ -35,6 +37,10 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    public void Displayscore()
+    {
+        scores.text = $"  Scores:\nWisdom: {player.wisdom}\nIntelligence:{player.Intelligence} \nCharisma: {player.charisma}\nStrength: {player.strength}";
+    }
 
-  
+
 }
